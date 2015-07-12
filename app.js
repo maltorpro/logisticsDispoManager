@@ -1,3 +1,4 @@
+/// <reference path="typings/node/node.d.ts"/>
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,6 +8,15 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/todoApp', function(err) {
+    if(err) {
+        console.log('connection error', err);
+    } else {
+        console.log('connection successful');
+    }
+});
 
 var app = express();
 

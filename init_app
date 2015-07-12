@@ -1,0 +1,30 @@
+npm install -g express
+npm install -g express-generator
+
+express myExpressApp
+
+cd myExpressApp
+npm install
+
+node ./bin/www
+http://localhost:3000
+
+code .
+
+
+Click on the gear to create a default launch.json file. This file tells VSCode how to start your Node application so that it can be debugged.
+
+We'll change the Name property to Launch and we'll change the program property to tell VSCode to start ./bin/www when launching this application.
+
+repository auschecken
+git clone host:https://github.com/maltorpro/nodeExpressTemplate.git
+
+add & commit
+git add *
+git add <dateiname>
+git commit -m "Commit-Nachricht"
+
+änderungen hochladen
+git push origin master
+
+npm install mongoose --save
