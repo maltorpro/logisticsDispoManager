@@ -6,7 +6,7 @@ express myExpressApp
 cd myExpressApp
 npm install
 
-node ./bin/www
+npm start
 http://localhost:3000
 
 code .
@@ -28,3 +28,6 @@ git commit -m "Commit-Nachricht"
 git push origin master
 
 npm install mongoose --save
+
+tsc watch immer starten
+$ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
