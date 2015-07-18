@@ -9,6 +9,7 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require('reflect-metadata');
 /// <reference path="../typings/angular2/angular2.d.ts" />
 var angular2_1 = require('angular2/angular2');
 // Annotation section

@@ -3,8 +3,11 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/traceur-runtime.js')
-    script(src='/javascripts/system@0.16.11.js')
-    script(src='/javascripts/angular2.dev.js')
+    
+    script(src='/scripts/traceur/bin/traceur.js')
+    script(src='/scripts/es6-module-loader/dist/es6-module-loader.js')
+    script(src='/scripts/systemjs/dist/system.js')
+    script(src='/scripts/angular2/es6/dev/angular2.js')
+    
   body
     block content

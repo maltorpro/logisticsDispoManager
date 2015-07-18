@@ -6,9 +6,7 @@
     <script src="/scripts/traceur/bin/traceur.js"></script>
     <script src="/scripts/es6-module-loader/dist/es6-module-loader.js"></script>
     <script src="/scripts/systemjs/dist/system.js"></script>
-    
-    
-   <script src="/scripts/angular2/es6/dev/angular2.js"></script> 
+    <script src="/scripts/angular2/es6/dev/angular2.js"></script> 
       
 </head>
   <body>
@@ -17,9 +15,16 @@
     <my-app></my-app>
     <script>
         System.config({
-        baseURL: '/app'
-      });
-      System.import('app.js');
+          defaultJSExtensions: true
+        });
+        System.paths = {
+        'angular2/*':'/scripts/angular2/*.js', // Angular
+        'rx':'/scripts/rx/dist/rx.js',
+        'crypto':'/scripts/crypto-js/crypto-js.js',
+        'reflect-metadata':'/scripts/reflect-metadata/Reflect.js',
+        'app': 'app.js' // The my-app component
+      };
+      System.import('app');
   
   </script>
 
