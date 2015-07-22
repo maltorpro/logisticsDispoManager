@@ -1,13 +1,32 @@
 doctype html
 html
   head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
     
-    script(src='/scripts/traceur/bin/traceur.js')
-    script(src='/scripts/es6-module-loader/dist/es6-module-loader.js')
-    script(src='/scripts/systemjs/dist/system.js')
-    script(src='/scripts/angular2/es6/dev/angular2.js')
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    
+    link(rel="stylesheet", href="/scripts/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/scripts/font-awesome/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/scripts/metismenu/dist/metisMenu.min.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    
+    script(src="/scripts/traceur/bin/traceur.js")
+    script(src="/scripts/es6-module-loader/dist/es6-module-loader.js")
+    script(src="/scripts/systemjs/dist/system.js")
+    script(src="/scripts/angular2/es6/dev/angular2.js")
+    
     
   body
+    block pageHeader
+    block navi
     block content
+
+    script(src="/scripts/jquery/dist/jquery.min.js") 
+    script(src="/scripts/bootstrap/dist/js/bootstrap.min.js") 
+    script(src="/scripts/metismenu/dist/metisMenu.min.js") 
+    
+    script(src="/javascripts/main.js") 
+   

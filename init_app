@@ -38,3 +38,7 @@ $ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
 
 tsc watch immer starten
 $ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
+
+#express Daten auslesen
+h1= title 
+p Welcome to #{title}

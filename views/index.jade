@@ -1,9 +1,125 @@
 extends layout
 
+block pageHeader
+  nav.page-header
+    h1 Example page header
+
+block navi
+  aside.sidebar
+      nav.sidebar-nav
+          ul#menu.metismenu 
+            li.active
+              a(href='#')
+                span.sidebar-nav-item-icon.fa.fa-book.fa-lg
+                |               
+                span.sidebar-nav-item Disposition
+                |               
+                span.fa.arrow
+              |             
+              ul
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-plus
+                    |                   Neuanlage
+                |               
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-paper-plane
+                    |                   Angebote
+                |               
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-money
+                    |                   Rechnungen
+            |           
+            li
+              a(href='#')
+                span.sidebar-nav-item-icon.fa.fa-users.fa-lg
+                |               
+                span.sidebar-nav-item Kunden
+                |               
+                span.fa.arrow
+              |             
+              ul
+                li
+                  a(href='#') item 0.1
+                |               
+                li
+                  a(href='#') item 0.2
+                |                         
+                li
+                  a(href='#') item 0.4
+            |      
+            li
+              a(href='#')
+                span.sidebar-nav-item-icon.fa.fa-truck.fa-lg
+                |               
+                span.sidebar-nav-item Fahrerstamm
+                |               
+                span.fa.arrow
+              |             
+              ul
+                li
+                  a(href='#') item 0.1
+                |               
+                li
+                  a(href='#') item 0.2
+                |                         
+                li
+                  a(href='#') item 0.4
+            |  
+            li
+              a(href='#')
+                span.sidebar-nav-item-icon.fa.fa-envelope.fa-lg
+                |               
+                span.sidebar-nav-item Adressen
+                |               
+                span.fa.arrow
+              |             
+              ul
+                li
+                  a(href='#') item 0.1
+                |               
+                li
+                  a(href='#') item 0.2
+                |                         
+                li
+                  a(href='#') item 0.4
+            | 
+            li
+              a(href='#')
+                span.sidebar-nav-item-icon.fa.fa-cogs.fa-lg
+                |               
+                span.sidebar-nav-item Adminstration
+                |               
+                span.fa.arrow
+              |             
+              ul
+                li
+                  a(href='#') item 0.1
+                |               
+                li
+                  a(href='#') item 0.2
+                |                         
+                li
+                  a(href='#') item 0.4
+            |                                    
+           
+
+
 block content
-  h1= title
-  p Welcome to #{title}
-  my-app
+  section(class="content")
+    div(class="col-xs-12")
+      div(class="panel  panel-primary")
+        div(class="panel-heading")
+          span(class="pull-left")
+            span(class="fa fa-book fa-3x")
+          h1 Disposition
+        div(class="panel-body")
+          my-app 
+ 
+ 
+
   script. 
     System.config({
           defaultJSExtensions: true
