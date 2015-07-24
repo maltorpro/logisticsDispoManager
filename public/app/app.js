@@ -6,13 +6,12 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-if (typeof __metadata !== "function") __metadata = function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 require('reflect-metadata');
 /// <reference path="../typings/angular2/angular2.d.ts" />
 var angular2_1 = require('angular2/angular2');
-// Annotation section
+var router_1 = require('angular2/router');
+var home_1 = require('./components/home/home');
+var about_1 = require('./components/about/about');
 var MyAppComponent = (function () {
     function MyAppComponent() {
         this.name = 'Alice';
@@ -21,10 +20,13 @@ var MyAppComponent = (function () {
         angular2_1.Component({
             selector: 'my-app'
         }),
+        router_1.RouteConfig([
+            { path: '/', component: home_1.Home, as: 'home' },
+            { path: '/about', component: about_1.About, as: 'about' }
+        ]),
         angular2_1.View({
             template: '<h1>Hello {{ name }}</h1>'
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], MyAppComponent);
     return MyAppComponent;
 })();

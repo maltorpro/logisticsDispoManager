@@ -1,125 +1,141 @@
 extends layout
 
-block pageHeader
-  nav.page-header
-    h1 Example page header
-
-block navi
-  aside.sidebar
-      nav.sidebar-nav
-          ul#menu.metismenu 
-            li.active
-              a(href='#')
-                span.sidebar-nav-item-icon.fa.fa-book.fa-lg
-                |               
-                span.sidebar-nav-item Disposition
-                |               
-                span.fa.arrow
-              |             
-              ul
-                li
-                  a(href='#')
-                    span.sidebar-nav-item-icon.fa.fa-plus
-                    |                   Neuanlage
-                |               
-                li
-                  a(href='#')
-                    span.sidebar-nav-item-icon.fa.fa-paper-plane
-                    |                   Angebote
-                |               
-                li
-                  a(href='#')
-                    span.sidebar-nav-item-icon.fa.fa-money
-                    |                   Rechnungen
-            |           
-            li
-              a(href='#')
-                span.sidebar-nav-item-icon.fa.fa-users.fa-lg
-                |               
-                span.sidebar-nav-item Kunden
-                |               
-                span.fa.arrow
-              |             
-              ul
-                li
-                  a(href='#') item 0.1
-                |               
-                li
-                  a(href='#') item 0.2
-                |                         
-                li
-                  a(href='#') item 0.4
-            |      
-            li
-              a(href='#')
-                span.sidebar-nav-item-icon.fa.fa-truck.fa-lg
-                |               
-                span.sidebar-nav-item Fahrerstamm
-                |               
-                span.fa.arrow
-              |             
-              ul
-                li
-                  a(href='#') item 0.1
-                |               
-                li
-                  a(href='#') item 0.2
-                |                         
-                li
-                  a(href='#') item 0.4
-            |  
-            li
-              a(href='#')
-                span.sidebar-nav-item-icon.fa.fa-envelope.fa-lg
-                |               
-                span.sidebar-nav-item Adressen
-                |               
-                span.fa.arrow
-              |             
-              ul
-                li
-                  a(href='#') item 0.1
-                |               
-                li
-                  a(href='#') item 0.2
-                |                         
-                li
-                  a(href='#') item 0.4
-            | 
-            li
-              a(href='#')
-                span.sidebar-nav-item-icon.fa.fa-cogs.fa-lg
-                |               
-                span.sidebar-nav-item Adminstration
-                |               
-                span.fa.arrow
-              |             
-              ul
-                li
-                  a(href='#') item 0.1
-                |               
-                li
-                  a(href='#') item 0.2
-                |                         
-                li
-                  a(href='#') item 0.4
-            |                                    
-           
-
-
 block content
-  section(class="content")
-    div(class="col-xs-12")
-      div(class="panel  panel-primary")
-        div(class="panel-heading")
-          span(class="pull-left")
-            span(class="fa fa-book fa-3x")
-          h1 Disposition
+  section.content
+    div.col-md-12.col-xs-12.col-sm-12.col-lg-12
+      div.panel.panel-primary
+        div.panel-heading
+          span.pull-left
+            span.fa.fa-book.fa-2x
+          h2 Disposition
         div(class="panel-body")
+          div.input-group.search-input
+            input.form-control(type="text" placeholder="Suche nach Disposition...")
+            span.input-group-btn
+              button.btn.btn-default(type='button')
+                i.fa.fa-search
+            span.input-group-btn
+              button.btn.btn-default(type='button')
+                i.fa.fa-plus
+                     
+          div.row.teaser-row
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            div.col-md-4.col-xs-12.col-sm-6.col-lg-3
+              div.teaser
+                div.headline
+                    h4
+                      i.fa.fa-book.fa-lg
+                      span D2015/626286
+                div.teaser-content 
+                 dl
+                    dt Kundennummer
+                    dd K653289
+                    dt Adresse
+                    dd MK-Trans-logistics, Str. 270 - 276, 47055 Duisburg
+                    dt Rechnungsnummer
+                    dd R437439
+                    dt Referenznummer
+                    dd 2389908324
+            
           my-app 
  
  
-
   script. 
     System.config({
           defaultJSExtensions: true
@@ -129,6 +145,6 @@ block content
         'rx':'/scripts/rx/dist/rx.js',
         'crypto':'/scripts/crypto-js/crypto-js.js',
         'reflect-metadata':'/scripts/reflect-metadata/Reflect.js',
-        'app': 'app.js' // The my-app component
+        'app': 'app/app.js' // The my-app component
     };
     System.import('app');
