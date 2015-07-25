@@ -42,3 +42,15 @@ $ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
 #express Daten auslesen
 h1= title 
 p Welcome to #{title}
+
+
+
+git clone https://github.com/mgechev/angular2-seed.git
+cd angular2-seed
+npm install
+# If you don't have gulp already installed
+npm install -g gulp
+# dev
+gulp serve.dev
+# prod
+gulp serve.prod

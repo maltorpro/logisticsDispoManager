@@ -1,0 +1,140 @@
+/* 
+###### General ######
+*/
+
+
+body {
+  padding: 10px 50px 50px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #e5e5e5;
+  color: rgb(43, 60, 102)};
+  
+
+a {
+  color: #00B7FF;
+}
+
+/* 
+###### Page header ######
+*/
+
+.page-header {
+  background-color: #fff;
+  border: 1px solid rgb(178, 178, 178);
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  padding-bottom: 0px;
+  margin: 20px 0px 20px 0px;
+}
+
+.page-header h1 img {
+  margin-right: 20px;
+}
+
+.page-header h1 {
+  margin: 0px 0 0px 0px;
+}
+
+/* 
+###### Navi ######
+*/
+
+.sidebar {
+  display: block;
+  float: left;
+  width: 250px;
+  background: #333;
+}
+.content {
+  display: block;
+  overflow: hidden;
+  width: auto;
+  /* padding-left: 50px; */
+}
+.sidebar-nav {
+  border-bottom: 1px solid rgba(178, 178, 178, 1);
+  background-image: -webkit-linear-gradient(left, color-stop(#333333 10px), color-stop(#222222 10px));
+  background-image: linear-gradient(to right, #337AB7 10px, #FFFFFF 10px);
+  background-repeat: repeat-x;
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff333333', endColorstr='#ff222222', GradientType=1);
+}
+.sidebar-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sidebar-nav a, .sidebar-nav a:hover, .sidebar-nav a:focus, .sidebar-nav a:active {
+  outline: none;
+}
+.sidebar-nav ul li, .sidebar-nav ul a {
+  display: block;
+  color: #f5f5f5;
+}
+.sidebar-nav ul a {
+  padding: 10px 20px;
+  color: rgb(43, 60, 102);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset;
+  /* text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5); */
+}
+.sidebar-nav ul a:hover, .sidebar-nav ul a:focus, .sidebar-nav ul a:active {
+  color: #337AB7;
+  text-decoration: none;
+  background-color: rgba(229, 229, 229, 0.41);
+}
+.sidebar-nav ul ul a {
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.sidebar-nav ul ul a:hover, .sidebar-nav ul ul a:focus, .sidebar-nav ul ul a:active {
+  background-color: rgba(229, 229, 229, 0.41);
+}
+.sidebar-nav-item {
+  padding-left: 5px;
+}
+.sidebar-nav-item-icon {
+  padding-right: 5px;
+}
+
+/*
+ ###### Panel ######
+*/
+
+.panel-heading h2 {
+  font-size: 30px;
+  margin: 0px 0px 0px 40px;  
+}
+
+/*
+ ###### Content ######
+*/
+.col-md-12 {
+  padding-right: 0px;
+}
+
+
+.teaser {
+   padding: 5px;
+   min-height: 150px;
+   border: 1px solid rgba(178, 178, 178, 1);
+   border-radius: 4px;
+   margin-top: 30px;
+}
+
+.teaser .headline {
+   border-bottom: 1px solid rgba(178, 178, 178, 1);
+}
+
+.teaser .headline span {
+  margin-left: 10px;
+}
+
+.teaser-content {
+  display: block;
+  overflow: hidden;
+  width: auto;
+  padding-left: 35px;}
+

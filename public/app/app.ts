@@ -1,20 +1,18 @@
-import 'reflect-metadata';
-/// <reference path="../typings/angular2/angular2.d.ts" />
+//import 'reflect-metadata';
+/// <reference path="typings/_custom.d.ts" />
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {RouteConfig, RouterOutlet, RouterLink, routerInjectables} from 'angular2/router';
 
 
-import {Home} from './components/home/home';
-import {About} from './components/about/about';
+import {Disposal} from './components/disposal/disposal';
 import {NamesList} from './services/NameList';
 
 // Annotation section
 @Component({
-  selector: 'my-app'
+  selector: 'app'
 })
 @RouteConfig([
-  { path: '/', component: Home, as: 'home' },
-  { path: '/about', component: About, as: 'about' }
+  { path: '/disposal', component: Disposal, as: 'disposal' }
 ])
 @View({
   template: '<h1>Hello {{ name }}</h1>'
@@ -28,4 +26,4 @@ class MyAppComponent {
   }
 }
 
-bootstrap(MyAppComponent);
+bootstrap(MyAppComponent, [routerInjectables]);

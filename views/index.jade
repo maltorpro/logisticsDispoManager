@@ -133,18 +133,17 @@ block content
                     dt Referenznummer
                     dd 2389908324
             
-          my-app 
- 
- 
-  script. 
-    System.config({
-          defaultJSExtensions: true
-    });
-    System.paths = {
-        'angular2/*':'/scripts/angular2/*.js', // Angular
-        'rx':'/scripts/rx/dist/rx.js',
-        'crypto':'/scripts/crypto-js/crypto-js.js',
-        'reflect-metadata':'/scripts/reflect-metadata/Reflect.js',
-        'app': 'app/app.js' // The my-app component
-    };
-    System.import('app');
+          app loading
+  
+   script. 
+      System.config({
+            defaultJSExtensions: true
+      });
+      System.paths = {
+          'angular2/*':'/scripts/angular2/*.js', // Angular
+          'rx':'/scripts/rx/dist/rx.js',
+          'crypto':'/scripts/crypto-js/crypto-js.js',
+          'reflect-metadata':'/scripts/reflect-metadata/Reflect.js',
+          'app': 'app/app.js' // The my-app component
+      };
+      System.import('app');

@@ -13,10 +13,14 @@ html
     link(rel="stylesheet", href="/scripts/metismenu/dist/metisMenu.min.css")
     link(rel="stylesheet", href="/stylesheets/style.css")
     
+    <!-- inject:css -->
+    <!-- endinject -->
+    
+    <!--
     script(src="/scripts/traceur/bin/traceur.js")
     script(src="/scripts/es6-module-loader/dist/es6-module-loader.js")
     script(src="/scripts/systemjs/dist/system.js")
-    script(src="/scripts/angular2/es6/dev/angular2.js")
+    script(src="/scripts/angular2/es6/dev/angular2.js") -->
     
     
   body
@@ -25,109 +29,107 @@ html
       h1
         img(src="images/logo.png")
         |l<small>ogistics</small>D<small>ispo</small>M<small>anager</small>
-    
-  
-    
-  block navi
-    aside.sidebar
-        nav.sidebar-nav
-            ul#menu.metismenu 
-              li.active
-                a(href='#')
-                  span.sidebar-nav-item-icon.fa.fa-book.fa-lg
-                  |               
-                  span.sidebar-nav-item Disposition
-                  |               
-                  span.fa.arrow
-                |             
-                ul
-                  li
-                    a(href='#')
-                      span.sidebar-nav-item-icon.fa.fa-plus
-                      |                   Neuanlage
-                  |               
-                  li
-                    a(href='#')
-                      span.sidebar-nav-item-icon.fa.fa-paper-plane
-                      |                   Angebote
-                  |               
-                  li
-                    a(href='#')
-                      span.sidebar-nav-item-icon.fa.fa-money
-                      |                   Rechnungen
-              |           
-              li
-                a(href='#')
-                  span.sidebar-nav-item-icon.fa.fa-users.fa-lg
-                  |               
-                  span.sidebar-nav-item Kunden
-                  |               
-                  span.fa.arrow
-                |             
-                ul
-                  li
-                    a(href='#') item 0.1
-                  |               
-                  li
-                    a(href='#') item 0.2
-                  |                         
-                  li
-                    a(href='#') item 0.4
-              |      
-              li
-                a(href='#')
-                  span.sidebar-nav-item-icon.fa.fa-truck.fa-lg
-                  |               
-                  span.sidebar-nav-item Fahrerstamm
-                  |               
-                  span.fa.arrow
-                |             
-                ul
-                  li
-                    a(href='#') item 0.1
-                  |               
-                  li
-                    a(href='#') item 0.2
-                  |                         
-                  li
-                    a(href='#') item 0.4
-              |  
-              li
-                a(href='#')
-                  span.sidebar-nav-item-icon.fa.fa-envelope.fa-lg
-                  |               
-                  span.sidebar-nav-item Adressen
-                  |               
-                  span.fa.arrow
-                |             
-                ul
-                  li
-                    a(href='#') item 0.1
-                  |               
-                  li
-                    a(href='#') item 0.2
-                  |                         
-                  li
-                    a(href='#') item 0.4
-              | 
-              li
-                a(href='#')
-                  span.sidebar-nav-item-icon.fa.fa-cogs.fa-lg
-                  |               
-                  span.sidebar-nav-item Adminstration
-                  |               
-                  span.fa.arrow
-                |             
-                ul
-                  li
-                    a(href='#') item 0.1
-                  |               
-                  li
-                    a(href='#') item 0.2
-                  |                         
-                  li
-                    a(href='#') item 0.4
-              |                   
+
+    block navi
+      aside.sidebar
+          nav.sidebar-nav
+              ul#menu.metismenu 
+                li.active
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-book.fa-lg
+                    |               
+                    span.sidebar-nav-item Disposition
+                    |               
+                    span.fa.arrow
+                  |             
+                  ul
+                    li
+                      a(href='#')
+                        span.sidebar-nav-item-icon.fa.fa-plus
+                        |                   Neuanlage
+                    |               
+                    li
+                      a(href='#')
+                        span.sidebar-nav-item-icon.fa.fa-paper-plane
+                        |                   Angebote
+                    |               
+                    li
+                      a(href='#')
+                        span.sidebar-nav-item-icon.fa.fa-money
+                        |                   Rechnungen
+                |           
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-users.fa-lg
+                    |               
+                    span.sidebar-nav-item Kunden
+                    |               
+                    span.fa.arrow
+                  |             
+                  ul
+                    li
+                      a(href='#') item 0.1
+                    |               
+                    li
+                      a(href='#') item 0.2
+                    |                         
+                    li
+                      a(href='#') item 0.4
+                |      
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-truck.fa-lg
+                    |               
+                    span.sidebar-nav-item Fahrerstamm
+                    |               
+                    span.fa.arrow
+                  |             
+                  ul
+                    li
+                      a(href='#') item 0.1
+                    |               
+                    li
+                      a(href='#') item 0.2
+                    |                         
+                    li
+                      a(href='#') item 0.4
+                |  
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-envelope.fa-lg
+                    |               
+                    span.sidebar-nav-item Adressen
+                    |               
+                    span.fa.arrow
+                  |             
+                  ul
+                    li
+                      a(href='#') item 0.1
+                    |               
+                    li
+                      a(href='#') item 0.2
+                    |                         
+                    li
+                      a(href='#') item 0.4
+                | 
+                li
+                  a(href='#')
+                    span.sidebar-nav-item-icon.fa.fa-cogs.fa-lg
+                    |               
+                    span.sidebar-nav-item Adminstration
+                    |               
+                    span.fa.arrow
+                  |             
+                  ul
+                    li
+                      a(href='#') item 0.1
+                    |               
+                    li
+                      a(href='#') item 0.2
+                    |                         
+                    li
+                      a(href='#') item 0.4
+                |                   
     
     block content
 
@@ -135,5 +137,10 @@ html
     script(src="/scripts/bootstrap/dist/js/bootstrap.min.js") 
     script(src="/scripts/metismenu/dist/metisMenu.min.js") 
     
-    script(src="/javascripts/main.js") 
+    script(src="/javascripts/main.js")
+    
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    script(src="/app/init.js")
    
