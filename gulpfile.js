@@ -40,12 +40,17 @@ var PATH = {
       all: 'dist/dev',
       lib: 'dist/dev/lib',
       css: 'dist/dev/stylesheets',
+      font: 'dist/dev/fonts',
+      images: 'dist/dev/images',
       ng2: 'dist/dev/lib/angular2.js',
       router: 'dist/dev/lib/router.js'
     },
     prod: {
       all: 'dist/prod',
-      lib: 'dist/prod/lib'
+      lib: 'dist/prod/lib',
+      css: 'dist/prod/stylesheets',
+      font: 'dist/prod/fonts',
+      images: 'dist/prod/images'
     }
   },
   src: {
@@ -67,6 +72,9 @@ var PATH = {
       './node_modules/bootstrap/dist/css/bootstrap.css',
       './node_modules/font-awesome/css/font-awesome.css',
       './node_modules/metismenu/dist/metisMenu.css'
+    ],
+    font: [
+      './node_modules/font-awesome/fonts/*.*',
     ]
   }
 };
@@ -114,10 +122,12 @@ gulp.task('clean.dev', function (done) {
 });
 
 gulp.task('clean.app.dev', function (done) {
-  // TODO: rework this part.
   del([join(PATH.dest.dev.all, '**/*')
-      , '!' + PATH.dest.dev.lib, '!' + join(PATH.dest.dev.lib)
-      ,'!' + PATH.dest.dev.css, '!' + join(PATH.dest.dev.css, '*')], done);
+      , '!' + PATH.dest.dev.lib, '!' + join(PATH.dest.dev.lib, '*')
+      ,'!' + PATH.dest.dev.css, '!' + join(PATH.dest.dev.css, '*')
+      ,'!' + PATH.dest.dev.images, '!' + join(PATH.dest.dev.images, '*')
+      ,'!' + PATH.dest.dev.font, '!' + join(PATH.dest.dev.font, '*')
+      ], done);
 });
 
 gulp.task('clean.prod', function (done) {
@@ -125,9 +135,12 @@ gulp.task('clean.prod', function (done) {
 });
 
 gulp.task('clean.app.prod', function (done) {
-  // TODO: rework this part.
-  del([join(PATH.dest.prod.all, '**/*'), '!' +
-       PATH.dest.prod.lib, '!' + join(PATH.dest.prod.lib, '*')], done);
+  del([join(PATH.dest.prod.all, '**/*'), '!'
+      + PATH.dest.prod.lib, '!' + join(PATH.dest.prod.lib, '*')
+      ,'!' + PATH.dest.prod.css, '!' + join(PATH.dest.dev.css, '*')
+      ,'!' + PATH.dest.prod.images, '!' + join(PATH.dest.prod.images, '*')
+      ,'!' + PATH.dest.prod.font, '!' + join(PATH.dest.prod.font, '*')
+      ], done);
 });
 
 gulp.task('clean.tmp', function(done) {
@@ -164,7 +177,17 @@ gulp.task('build.css.dev', function () {
     .pipe(gulp.dest(PATH.dest.dev.css));
 });
 
-gulp.task('build.assets.dev', ['build.js.dev'], function () {
+gulp.task('build.font.dev', function () {
+  return gulp.src(PATH.src.font)
+    .pipe(gulp.dest(PATH.dest.dev.font));
+});
+
+gulp.task('build.images.dev', function () {
+  return gulp.src(['./app/images/*.*'])
+    .pipe(gulp.dest(PATH.dest.dev.images));
+});
+
+gulp.task('build.assets.dev', ['build.js.dev', 'build.images.dev'], function () {
   return gulp.src(['./app/**/*.html','./app/**/*.jade', './app/**/*.css'])
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
@@ -182,7 +205,7 @@ gulp.task('build.app.dev', function (done) {
 });
 
 gulp.task('build.dev', function (done) {
-  runSequence('clean.dev','build.css.dev', 'build.lib.dev', 'build.app.dev', done);
+  runSequence('clean.dev','build.css.dev', 'build.font.dev','build.lib.dev', 'build.app.dev', done);
 });
 
 // --------------
@@ -235,7 +258,22 @@ gulp.task('build.init.prod', function() {
     .pipe(gulp.dest(PATH.dest.prod.all));
 });
 
-gulp.task('build.assets.prod', ['build.js.prod'], function () {
+gulp.task('build.css.prod', function () {
+  return gulp.src(PATH.src.css)
+    .pipe(gulp.dest(PATH.dest.prod.css));
+});
+
+gulp.task('build.images.prod', function () {
+  return gulp.src(['./app/images/*.*'])
+    .pipe(gulp.dest(PATH.dest.prod.images));
+});
+
+gulp.task('build.font.prod', function () {
+  return gulp.src(PATH.src.font)
+    .pipe(gulp.dest(PATH.dest.prod.font));
+});
+
+gulp.task('build.assets.prod', ['build.js.prod', 'build.images.prod'], function () {
   var filterHTML = filter('**/*.html');
   var filterCSS = filter('**/*.css');
   return gulp.src(['./app/**/*.html', './app/**/*.css'])
@@ -264,7 +302,7 @@ gulp.task('build.app.prod', function (done) {
 });
 
 gulp.task('build.prod', function (done) {
-  runSequence('clean.prod', 'build.lib.prod', 'clean.tmp', 'build.app.prod',
+  runSequence('clean.prod', 'build.lib.prod', 'build.font.prod', 'clean.tmp', 'build.app.prod',
               done);
 });
 
