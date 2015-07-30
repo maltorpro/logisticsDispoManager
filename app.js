@@ -7,10 +7,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var disposals = require('./routes/disposals.js');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+mongoose.connect('mongodb://localhost/logisticsDispoManger', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'dist/dev')));
 app.use('/scripts', express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/disposals', disposals);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
