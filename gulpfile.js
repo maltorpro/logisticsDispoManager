@@ -66,6 +66,7 @@ var PATH = {
       './node_modules/jquery/dist/jquery.min.js',
       './node_modules/bootstrap/dist/js/bootstrap.min.js',
       './node_modules/metismenu/dist/metisMenu.min.js',
+       './node_modules/jscroll/jquery.jscroll.js',
       './app/javascripts/main.js',
     ],
     css: [

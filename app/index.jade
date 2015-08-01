@@ -17,6 +17,26 @@ block content
             span.input-group-btn
               button.btn.btn-default(type='button')
                 i.fa.fa-plus
+          div.row.teaser-row.infinite-scroll
+            include ./particular/disposalRow.jade
+          app loading
+//
+  section.content
+    div.col-md-12.col-xs-12.col-sm-12.col-lg-12
+      div.panel.panel-primary
+        div.panel-heading
+          span.pull-left
+            span.fa.fa-book.fa-2x
+          h2 Disposition
+        div(class="panel-body")
+          div.input-group.search-input
+            input.form-control(type="text" placeholder="Suche nach Disposition...")
+            span.input-group-btn
+              button.btn.btn-default(type='button')
+                i.fa.fa-search
+            span.input-group-btn
+              button.btn.btn-default(type='button')
+                i.fa.fa-plus
                      
           div.row.teaser-row
             div.col-md-4.col-xs-12.col-sm-6.col-lg-3
@@ -132,4 +152,4 @@ block content
                     dd R437439
                     dt Referenznummer
                     dd 2389908324    
-      app loading
+      

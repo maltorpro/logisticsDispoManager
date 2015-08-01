@@ -1,10 +1,19 @@
 export class DisposalService {
-  disposals = ['Dijkstra', 'Knuth', 'Turing', 'Hopper'];
 
   get() {
-    return this.disposals;
+    return fetch('http://localhost:3001/api/random-word', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then((response) => {
+      return response.text();
+    })
+    .then((text) => {
+      return JSON.parse(text);
+    })
   }
-  add(value: Object) {
-    this.disposals.push(value);
-  }
+  
 }
