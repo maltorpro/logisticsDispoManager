@@ -17,14 +17,23 @@ router.get('/', function(req, res, next) {
        if (err) {
          return next(err);
        }  
-       res.render('index', { data: disposals, pageSize: pageSize, page: page });
+       res.render('index', { 
+         data: disposals,
+         pageSize: pageSize,
+         page: page });
     });
   
 });
 
+
 router.get('/disposalRow/:page', function(req, res, next) {
 
   var page = req.params.page;
+  var searchText = req.params.searchText;
+  
+  if(searchText == undefined) {
+    searchText = "";
+  }
   
   Disposal.find()
     .limit(pageSize)
@@ -33,7 +42,40 @@ router.get('/disposalRow/:page', function(req, res, next) {
        if (err) {
          return next(err);
        }  
-       res.render('./particular/disposalRow', {data: disposals,pageSize: pageSize, page: page});
+       res.render('./particular/disposalRow', {
+         data: disposals,
+         pageSize: pageSize,
+         page: page});
+    });
+ 
+ 
+});
+
+
+router.get('/disposalRow/:searchText/:page', function(req, res, next) {
+
+  var page = req.params.page;
+  var searchText = req.params.searchText;
+  
+  if(searchText == undefined) {
+    searchText = "";
+  }
+  
+  Disposal.find(
+       { $text : { $search : searchText} }, 
+       { score : { $meta: "textScore" } }
+    )
+    .limit(pageSize)
+    .skip(pageSize * page)
+    .exec(function(err, disposals) {
+       if (err) {
+         return next(err);
+       }  
+       res.render('./particular/disposalRow', {
+         data: disposals,
+         pageSize: pageSize,
+         searchText: searchText,
+         page: page});
     });
  
  
