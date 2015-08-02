@@ -15,7 +15,9 @@ $( document ).ready(function() {
           
           if ( event.which == 13 ) {
                event.preventDefault();
-               $.get( "/disposalRow/1", function( data) {
+               var searchText = $(".dispoSearch input").val();
+               
+               $.get( "/disposalRow/"+searchText+"/1", function( data) {
                     $(".teaser-row").empty();
                     $(".teaser-row").html(data);
                });
@@ -24,10 +26,12 @@ $( document ).ready(function() {
      
      $( ".dispoSearch button" ).click(function() {
           event.preventDefault();
-               $.get( "/disposalRow/1", function( data) {
-                    $(".teaser-row").empty();
-                    $(".teaser-row").html(data);
-               });
+          var searchText = $(".dispoSearch input").val();
+          
+          $.get("/disposalRow/"+searchText+"/1", function( data) {
+               $(".teaser-row").empty();
+               $(".teaser-row").html(data);
+          });
      });
      
 });

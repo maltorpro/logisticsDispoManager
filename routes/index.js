@@ -29,6 +29,12 @@ router.get('/', function(req, res, next) {
 router.get('/disposalRow/:page', function(req, res, next) {
 
   var page = req.params.page;
+  var skip  = 0;
+  
+  if(page > 1) {
+    skip = pageSize * page;
+  }
+  
   var searchText = req.params.searchText;
   
   if(searchText == undefined) {
@@ -37,7 +43,7 @@ router.get('/disposalRow/:page', function(req, res, next) {
   
   Disposal.find()
     .limit(pageSize)
-    .skip(pageSize * page)
+    .skip(skip)
     .exec(function(err, disposals) {
        if (err) {
          return next(err);
@@ -55,18 +61,27 @@ router.get('/disposalRow/:page', function(req, res, next) {
 router.get('/disposalRow/:searchText/:page', function(req, res, next) {
 
   var page = req.params.page;
+  var skip  = 0;
+  
+  if(page > 1) {
+    skip = pageSize * page;
+  }
+  
   var searchText = req.params.searchText;
   
   if(searchText == undefined) {
     searchText = "";
   }
   
+  console.log('/disposalRow/ searchText'+searchText);
+  
   Disposal.find(
        { $text : { $search : searchText} }, 
        { score : { $meta: "textScore" } }
     )
+    .sort({ score : { $meta : 'textScore' }  })
     .limit(pageSize)
-    .skip(pageSize * page)
+    .skip(skip)
     .exec(function(err, disposals) {
        if (err) {
          return next(err);
