@@ -9,29 +9,35 @@ $( document ).ready(function() {
         padding: 20,
         nextSelector: 'a.jscroll-next:last'
      });
-    
+     
+     var searchDispo = function() {
+          
+          var searchText = $(".dispoSearch input").val();
+          
+          var requestUrl = "/disposalRow";
+          if(searchText.length > 0) {
+               requestUrl += "/"+searchText;
+          }
+          
+          requestUrl += "/1";
+          
+          $.get(requestUrl, function( data) {
+               $(".teaser-row").empty();
+               $(".teaser-row").html(data);
+          });
+     }
      
      $( ".dispoSearch input" ).keypress(function(event) {
           
           if ( event.which == 13 ) {
                event.preventDefault();
-               var searchText = $(".dispoSearch input").val();
-               
-               $.get( "/disposalRow/"+searchText+"/1", function( data) {
-                    $(".teaser-row").empty();
-                    $(".teaser-row").html(data);
-               });
+               searchDispo();
           }
      });
      
      $( ".dispoSearch button" ).click(function() {
           event.preventDefault();
-          var searchText = $(".dispoSearch input").val();
-          
-          $.get("/disposalRow/"+searchText+"/1", function( data) {
-               $(".teaser-row").empty();
-               $(".teaser-row").html(data);
-          });
+          searchDispo()
      });
      
 });

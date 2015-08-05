@@ -3,7 +3,9 @@ var router = express.Router();
 
 var mongoose = require('mongoose');
 var Disposal = require('../models/Disposal.js')
-var pageSize = 8;
+
+var config = require('../config');
+var pageSize = config.pageSize;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -72,6 +74,8 @@ router.get('/disposalRow/:searchText/:page', function(req, res, next) {
   if(searchText == undefined) {
     searchText = "";
   }
+  
+  searchText = decodeURIComponent(searchText);
   
   console.log('/disposalRow/ searchText'+searchText);
   

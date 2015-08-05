@@ -15,7 +15,7 @@ each dispo in data
 					dd #{dispo.invoiceNumber}
 					dt Referenznummer
 					dd #{dispo.referenceNumber}
-if data.length > 0
+if data.length == pageSize
 	if searchtext != undefined && searchtext.lenght > 0
 		a.jscroll-next(href="/disposalRow/#{searchText}/#{parseInt(page)+1}") next page
 	else
