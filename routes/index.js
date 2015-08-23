@@ -77,8 +77,6 @@ router.get('/disposalRow/:searchText/:page', function(req, res, next) {
   
   searchText = decodeURIComponent(searchText);
   
-  console.log('/disposalRow/ searchText'+searchText);
-  
   Disposal.find(
        { $text : { $search : searchText} }, 
        { score : { $meta: "textScore" } }
@@ -98,6 +96,14 @@ router.get('/disposalRow/:searchText/:page', function(req, res, next) {
     });
  
  
+});
+
+
+router.get('/editDisposal', function(req, res, next) {
+ 
+  res.render('./particular/editDisposal', { 
+         data: "bla"});
+  
 });
 
 module.exports = router;

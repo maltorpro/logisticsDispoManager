@@ -42,7 +42,12 @@ html
                   |             
                   ul
                     li
-                      a(href='#')
+                      a(href='/')
+                        span.sidebar-nav-item-icon.fa.fa-list
+                        |                   Übersicht
+                    |      
+                    li
+                      a(href='/editDisposal')
                         span.sidebar-nav-item-icon.fa.fa-plus
                         |                   Neuanlage
                     |               
@@ -145,6 +150,7 @@ html
     script(src="/lib/router.js?v=0.0.0")
     //- endinject
     
-    script(src="/init.js?v=0.0.0")
+    block scripts
+    //- script(src="/init.js?v=0.0.0")
 
    

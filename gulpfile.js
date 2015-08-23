@@ -38,6 +38,7 @@ var PATH = {
     all: 'dist',
     dev: {
       all: 'dist/dev',
+      particular: 'dist/dev/particular',
       lib: 'dist/dev/lib',
       css: 'dist/dev/stylesheets',
       font: 'dist/dev/fonts',
@@ -47,6 +48,7 @@ var PATH = {
     },
     prod: {
       all: 'dist/prod',
+      particular: 'dist/prod/particular',
       lib: 'dist/prod/lib',
       css: 'dist/prod/stylesheets',
       font: 'dist/prod/fonts',
@@ -195,14 +197,22 @@ gulp.task('build.assets.dev', ['build.js.dev', 'build.images.dev'], function () 
 
 gulp.task('build.index.dev', function() {
   var target = gulp.src(injectableDevAssetsRef(), { read: false });
-  return gulp.src('./app/layout.jade')
+  return gulp.src(['./app/layout.jade'])
     .pipe(inject(target, { transform: transformPath('dev') }))
     .pipe(template(templateLocals()))
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
 
+gulp.task('build.particular.dev', function() {
+  
+  return gulp.src(['./app/particular/*.*'])
+    .pipe(template(templateLocals()))
+    .pipe(gulp.dest(PATH.dest.dev.particular));
+});
+
+
 gulp.task('build.app.dev', function (done) {
-  runSequence('clean.app.dev', 'build.assets.dev', 'build.index.dev', done);
+  runSequence('clean.app.dev', 'build.assets.dev', 'build.index.dev', 'build.particular.dev', done);
 });
 
 gulp.task('build.dev', function (done) {
@@ -296,10 +306,17 @@ gulp.task('build.index.prod', function() {
     .pipe(gulp.dest(PATH.dest.prod.all));
 });
 
+gulp.task('build.particular.prod', function() {
+  
+  return gulp.src(['./app/particular/*.*'])
+    .pipe(template(templateLocals()))
+    .pipe(gulp.dest(PATH.dest.prod.particular));
+});
+
 gulp.task('build.app.prod', function (done) {
   // build.init.prod does not work as sub tasks dependencies so placed it here.
   runSequence('clean.app.prod', 'build.init.prod', 'build.assets.prod',
-              'build.index.prod', 'clean.tmp', done);
+              'build.index.prod', 'build.particular.prod', 'clean.tmp', done);
 });
 
 gulp.task('build.prod', function (done) {

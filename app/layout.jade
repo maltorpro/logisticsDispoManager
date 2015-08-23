@@ -38,7 +38,12 @@ html
                   |             
                   ul
                     li
-                      a(href='#')
+                      a(href='/')
+                        span.sidebar-nav-item-icon.fa.fa-list
+                        |                   Übersicht
+                    |      
+                    li
+                      a(href='/editDisposal')
                         span.sidebar-nav-item-icon.fa.fa-plus
                         |                   Neuanlage
                     |               
@@ -129,6 +134,7 @@ html
     //- inject:js
     //- endinject
     
-    script(src="<%= APP_BASE %>init.js?v=<%= VERSION %>")
+    block scripts
+    //- script(src="<%= APP_BASE %>init.js?v=<%= VERSION %>")
 
    

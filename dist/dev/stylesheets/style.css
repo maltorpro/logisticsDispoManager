@@ -108,6 +108,10 @@ a {
   margin: 0px 0px 0px 40px;  
 }
 
+.panel-heading h2 small {
+  color: #fff;
+}
+
 /*
  ###### Content ######
 */

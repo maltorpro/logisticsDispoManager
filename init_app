@@ -54,3 +54,7 @@ npm install -g gulp
 gulp serve.dev
 # prod
 gulp serve.prod
+
+nodejs debug
+package.json
+"start": "node --debug ./bin/www"
