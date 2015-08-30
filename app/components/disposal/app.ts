@@ -1,10 +1,10 @@
-/// <reference path="typings/_custom.d.ts" />
+/// <reference path="../../typings/_custom.d.ts" />
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {RouteConfig, RouterOutlet, RouterLink, routerInjectables} from 'angular2/router';
 
-import {Home} from './components/home/home';
-import {About} from './components/about/about';
-import {NamesList} from './services/NameList';
+import {Home} from '../home/home';
+import {About} from '../about/about';
+import {NamesList} from '../../services/NameList';
 
 @Component({
   selector: 'app',
@@ -15,7 +15,7 @@ import {NamesList} from './services/NameList';
   { path: '/about', component: About, as: 'about' }
 ])
 @View({
-  templateUrl: '/app.html?v=<%= VERSION %>',
+  templateUrl: '/app.jade?v=<%= VERSION %>',
   directives: [RouterOutlet, RouterLink]
 })
 class App {}

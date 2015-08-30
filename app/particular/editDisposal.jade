@@ -1,53 +1,6 @@
 extends ../layout
 
 block content
-  section.content
-    div.col-md-12.col-xs-12.col-sm-12.col-lg-12
-      div.panel.panel-primary
-        div.panel-heading
-          span.pull-left
-            span.fa.fa-plus.fa-2x
-           h2 D
-            small isposition
-        div.panel-body
-          div.col-md-6.col-xs-12.col-sm-6.col-lg-3
-            div.form-group
-              label(for="disposalNumber") Dispositions Nummer:
-              input(type="text" class="form-control" name="dispo[disposalNumber]" id="disposalNumber")
-            div.form-group
-              label(for="customerNumber") Kundennummer:
-              input(type="text" class="form-control" name="dispo[customerNumber]" id="customerNumber")
-            div.form-group
-              label(for="referenceNumber") Referentnummer:
-              input(type="text" class="form-control" name="dispo[referenceNumber]" id="referenceNumber")
-          div.col-md-6.col-xs-12.col-sm-6.col-lg-3
-            div.form-group
-              label(for="address") Adresse:
-              textarea.form-control(rows="4" name="dispo[address]" id="address")
-          div.col-md-6.col-xs-12.col-sm-6.col-lg-3
-          div.col-md-6.col-xs-12.col-sm-6.col-lg-3
-         
-          div.col-md-12.col-xs-12.col-sm-12.col-lg-12
-            //- Nav tabs
-            ul.nav.nav-tabs(role="tablist")
-              li.active(role="presentation")
-                a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Angebot
-              li(role="presentation")
-                a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab") Auftrag
-              li(role="presentation")
-                a(href="#messages" aria-controls="messages" role="tab" data-toggle="tab") Messages
-              li(role="presentation")
-                a(href="#settings" aria-controls="settings" role="tab" data-toggle="tab") Settings
-              //- Tab panes
-            div.tab-content
-              div#home.tab-pane.active.fade.in(role="tabpanel")
-                p home
-              div#profile.tab-pane.fade(role="tabpanel")
-                p profile                  
-              div#message.tab-pane.fade(role="tabpanel")
-                p messages
-              div#settings.tab-pane.fade(role="tabpanel")
-                p settings
-  app loading
- block scripts
-    script(src="../<%= APP_BASE %>init.js?v=<%= VERSION %>")
+    app loading
+block scripts
+    script(src="<%= APP_BASE %>../components/disposal/init.js?v=<%= VERSION %>")

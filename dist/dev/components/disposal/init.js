@@ -1,0 +1,9 @@
+/// <reference path="../../typings/_custom.d.ts" />
+System.config({
+    baseURL: '/components/disposal/',
+    paths: { '*': '*.js?v=0.0.0' }
+});
+System.import('app')
+    .catch(function (e) { return console.error(e, 'Report this error at https://github.com/maltorpro/logisticsDispoManager/'); });
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvZGlzcG9zYWwvaW5pdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxBQUNBLG1EQURtRDtBQUNuRCxNQUFNLENBQUMsTUFBTSxDQUFDO0lBQ1osT0FBTyxFQUFFLHFDQUFxQztJQUM5QyxLQUFLLEVBQUUsRUFBQyxHQUFHLEVBQUUsdUJBQXVCLEVBQUM7Q0FDdEMsQ0FBQyxDQUFDO0FBRUgsTUFBTSxDQUFDLE1BQU0sQ0FBQyxLQUFLLENBQUM7S0FDakIsS0FBSyxDQUFDLFVBQUEsQ0FBQyxJQUFJLE9BQUEsT0FBTyxDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQ3pCLDBFQUEwRSxDQUFDLEVBRGpFLENBQ2lFLENBQUMsQ0FBQyIsImZpbGUiOiJjb21wb25lbnRzL2Rpc3Bvc2FsL2luaXQuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vdHlwaW5ncy9fY3VzdG9tLmQudHNcIiAvPlxuU3lzdGVtLmNvbmZpZyh7XG4gIGJhc2VVUkw6ICc8JT0gQVBQX0JBU0UgJT5jb21wb25lbnRzL2Rpc3Bvc2FsLycsXG4gIHBhdGhzOiB7JyonOiAnKi5qcz92PTwlPSBWRVJTSU9OICU+J31cbn0pO1xuXG5TeXN0ZW0uaW1wb3J0KCdhcHAnKVxuICAuY2F0Y2goZSA9PiBjb25zb2xlLmVycm9yKGUsXG4gICAgJ1JlcG9ydCB0aGlzIGVycm9yIGF0IGh0dHBzOi8vZ2l0aHViLmNvbS9tYWx0b3Jwcm8vbG9naXN0aWNzRGlzcG9NYW5hZ2VyLycpKTsiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
